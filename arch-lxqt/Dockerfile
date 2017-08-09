@@ -1,5 +1,3 @@
-# Dockerfile for an Arch instance with full desktop
-
 FROM base/archlinux:latest
 MAINTAINER rookiepeng
 
