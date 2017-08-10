@@ -4,6 +4,7 @@ MAINTAINER rookiepeng
 RUN pacman --sync --noconfirm --refresh --sysupgrade && \
     pacman --sync --noconfirm xfce4 \
     gvfs \
+    sudo \
     zsh \
     && \
     find /var/cache/pacman/pkg -mindepth 1 -delete
