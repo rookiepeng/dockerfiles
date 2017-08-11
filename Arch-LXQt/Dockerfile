@@ -1,7 +1,7 @@
 # Usage for windows
 #
 # docker run -it `
-# --net host `
+# --net bridge `
 # -e DISPLAY=10.0.75.1:0 `
 # -v /c/Docker/archie:/home/archie `
 # -h archdocker `
@@ -21,6 +21,7 @@ RUN pacman --sync --noconfirm --refresh --sysupgrade && \
 
 # add a user (archie) to eliminate root warning
 RUN useradd -m -G wheel -d /home/archie -s /bin/bash archie
+RUN echo "archie:archie" | chpasswd
 
 USER archie
 

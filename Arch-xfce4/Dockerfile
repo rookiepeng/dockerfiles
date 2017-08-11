@@ -20,8 +20,8 @@ RUN pacman --sync --noconfirm --refresh --sysupgrade && \
 
 # add a user (archie) to eliminate root warning
 RUN useradd -m -G wheel -d /home/archie -s /bin/bash archie
-RUN archie:archie | chpasswd
+RUN echo "archie:archie" | chpasswd
 
 USER archie
 
-#ENV HOME /home/archie
+ENV HOME /home/archie
