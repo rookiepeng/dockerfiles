@@ -1,7 +1,7 @@
 # Usage for windows
 #
 # docker run -it `
-# --net host `
+# --net bridge `
 # -e DISPLAY=10.0.75.1:0 `
 # -v /c/Docker/archie:/home/archie `
 # -h archdocker `
@@ -18,14 +18,10 @@ RUN pacman --sync --noconfirm --refresh --sysupgrade && \
     && \
     find /var/cache/pacman/pkg -mindepth 1 -delete
 
-COPY docker-entrypoint.sh /usr/local/bin/
-
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-
-#ENTRYPOINT ["docker-entrypoint.sh"]
 # add a user (archie) to eliminate root warning
-#RUN useradd -m -G wheel -d /home/archie -s /bin/bash archie
+RUN useradd -m -G wheel -d /home/archie -s /bin/bash archie
+RUN archie:archie | chpasswd
 
-#USER archie
+USER archie
 
 #ENV HOME /home/archie
