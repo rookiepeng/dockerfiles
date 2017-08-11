@@ -18,9 +18,12 @@ RUN pacman --sync --noconfirm --refresh --sysupgrade && \
     && \
     find /var/cache/pacman/pkg -mindepth 1 -delete
 
+COPY docker-entrypoint.sh /usr/local/bin/
+
+ENTRYPOINT ["docker-entrypoint.sh"]
 # add a user (archie) to eliminate root warning
-RUN useradd -m -G wheel -d /home/archie -s /bin/bash archie
+#RUN useradd -m -G wheel -d /home/archie -s /bin/bash archie
 
-USER archie
+#USER archie
 
-ENV HOME /home/archie
+#ENV HOME /home/archie
