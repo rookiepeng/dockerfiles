@@ -14,7 +14,7 @@ MAINTAINER rookiepeng
 RUN pacman --sync --noconfirm --refresh --sysupgrade && \
     pacman --sync --noconfirm lxqt \
     breeze-icons  \
-    #sudo \
+    sudo \
     gvfs \
     && \
     find /var/cache/pacman/pkg -mindepth 1 -delete
@@ -22,6 +22,7 @@ RUN pacman --sync --noconfirm --refresh --sysupgrade && \
 # add a user (archie) to eliminate root warning
 RUN useradd -m -G wheel -d /home/archie -s /bin/bash archie
 RUN echo "archie:archie" | chpasswd
+RUN echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 
 USER archie
 
