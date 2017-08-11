@@ -22,7 +22,7 @@ COPY docker-entrypoint.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+#ENTRYPOINT ["docker-entrypoint.sh"]
 # add a user (archie) to eliminate root warning
 #RUN useradd -m -G wheel -d /home/archie -s /bin/bash archie
 
