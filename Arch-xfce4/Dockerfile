@@ -3,7 +3,7 @@
 # docker run -it `
 # --net bridge `
 # -e DISPLAY=10.0.75.1:0 `
-# -v /c/Docker/archie:/home/archie `
+# -v /c/Docker/xfce4:/home/archie `
 # -h archdocker `
 # --name arch-xfce4 `
 # rookiepeng/arch-xfce4
@@ -21,6 +21,7 @@ RUN pacman --sync --noconfirm --refresh --sysupgrade && \
 # add a user (archie) to eliminate root warning
 RUN useradd -m -G wheel -d /home/archie -s /bin/bash archie
 RUN echo "archie:archie" | chpasswd
+RUN echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 
 USER archie
 
