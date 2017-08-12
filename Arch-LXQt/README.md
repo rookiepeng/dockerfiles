@@ -1,6 +1,6 @@
 It is said docker was not designed for GUI. However, docker is still a pretty good option for Windows users to have a Linux GUI environment without the VMs.
 
-![lxqt](https://github.com/rookiepeng/Docker-Files/blob/master/Arch-LXQt/images/lxqt.png)
+![lxqt](https://raw.githubusercontent.com/rookiepeng/Docker-Files/master/Arch-LXQt/images/lxqt.png)
 
 # Usage for Windows
 
