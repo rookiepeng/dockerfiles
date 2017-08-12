@@ -1,6 +1,6 @@
 It is said docker was not designed for GUI. However, docker is still a pretty good option for Windows users to have a Linux GUI environment without the VMs.
 
-![xfce4](https://github.com/rookiepeng/Docker-Files/blob/master/Arch-xfce4/images/xfce4.png)
+![xfce4](https://raw.githubusercontent.com/rookiepeng/Docker-Files/master/Arch-xfce4/images/xfce4.png)
 
 # Usage for Windows
 
