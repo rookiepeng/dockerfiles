@@ -12,7 +12,6 @@ RUN pacman --sync --noconfirm --refresh --sysupgrade && \
     && \
     find /var/cache/pacman/pkg -mindepth 1 -delete
 
-# add a user (archie) to eliminate root warning
 RUN useradd -m -G wheel -d /home/archie -s /bin/bash archie
 RUN echo "archie:archie" | chpasswd
 RUN echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
