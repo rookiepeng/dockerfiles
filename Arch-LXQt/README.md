@@ -1,5 +1,7 @@
 It is said docker was not designed for GUI. However, docker is still a pretty good option for Windows users to have a Linux GUI environment without the VMs.
 
+![lxqt](https://github.com/rookiepeng/Docker-Files/blob/master/Arch-LXQt/images/lxqt.png)
+
 # Usage for Windows
 
 **PowerShell**
@@ -43,5 +45,5 @@ docker run -it \
 
 # Note
 
-* The default password for user archie is ***archie***, please change the password as soon as possible.
+* The default password for user archie is ***archie***, please change the password on first run.
 
