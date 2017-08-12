@@ -10,9 +10,9 @@ RUN apk add --no-cache --update \
     gvfs \
     gnome-icon-theme
 
-RUN adduser -D -G wheel -h /home/alpine -s /bin/sh alpine
+RUN adduser -D -G alpine -h /home/alpine -s /bin/sh alpine
 RUN echo "alpine:alpine" | chpasswd
-RUN echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
+RUN echo '%alpine ALL=(ALL) ALL' >> /etc/sudoers
 
 USER alpine
 
