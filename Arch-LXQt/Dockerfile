@@ -1,12 +1,5 @@
-# Usage for windows
-#
-# docker run -it `
-# --net bridge `
-# -e DISPLAY=10.0.75.1:0 `
-# -v /c/Docker/archie:/root `
-# -h archdocker `
-# --name arch-lxqt `
-# rookiepeng/arch-lxqt
+# DESCRIPTION:	  LXQt desktop environment on Arch Linux
+# AUTHOR:		  rookiepeng (https://zpeng.me)
 
 FROM base/archlinux:latest
 MAINTAINER rookiepeng
