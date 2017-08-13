@@ -4,12 +4,16 @@
 FROM alpine
 MAINTAINER rookiepeng
 
-RUN apk add --no-cache --update \
+#RUN apk add --no-cache --update \
     #sudo \
-    alpine-desktop \
-    xfce4 \
-    gvfs \
-    gnome-icon-theme
+#    alpine-desktop \
+#    xfce4 \
+#    gvfs \
+#    gnome-icon-theme
+
+RUN apk update && apk add alpine-desktop xfce4
+
+CMD startxfce4
 
 #RUN adduser -D -h /home/alpine -s /bin/sh alpine
 #RUN echo "alpine:alpine" | chpasswd
@@ -19,4 +23,4 @@ RUN apk add --no-cache --update \
 
 #ENV HOME /home/alpine
 
-CMD startxfce4
+#CMD startxfce4
