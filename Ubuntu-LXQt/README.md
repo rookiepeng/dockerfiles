@@ -2,7 +2,7 @@
 
 * Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
 * Start [VcXsrv](https://sourceforge.net/projects/vcxsrv/) by using ***XLaunch*** shortcut
-* Use ***Multiple widnows***.
+* Use ***Fullscreen*** or ***One large window***.
 * On ***Extra settings*** page, check ***Disable access control***.
 
 **PowerShell**
