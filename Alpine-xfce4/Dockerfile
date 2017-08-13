@@ -9,7 +9,7 @@ RUN apk add --no-cache --update \
     alpine-desktop \
     xfce4 \
     gvfs \
-    gnome-icon-theme \
+    gnome-icon-theme
 
 #RUN adduser -D -h /home/alpine -s /bin/sh alpine
 #RUN echo "alpine:alpine" | chpasswd
