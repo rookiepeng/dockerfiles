@@ -19,4 +19,4 @@ USER archie
 
 #ENV HOME /home/archie
 
-CMD startxfce4
+ENTRYPOINT [ "startxfce4" ]

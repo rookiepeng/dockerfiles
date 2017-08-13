@@ -20,4 +20,4 @@ USER archie
 
 #ENV HOME /home/archie
 
-CMD startlxqt
+ENTRYPOINT [ "startlxqt" ]

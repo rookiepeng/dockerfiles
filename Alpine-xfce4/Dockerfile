@@ -18,4 +18,4 @@ USER alpine
 
 #ENV HOME /home/alpine
 
-CMD startxfce4
+ENTRYPOINT [ "startxfce4" ]
