@@ -2,6 +2,11 @@ It is said docker was not designed for GUI. However, docker is still a pretty go
 
 # Usage for Windows
 
+* Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
+* Start [VcXsrv](https://sourceforge.net/projects/vcxsrv/) by using ***XLaunch*** shortcut
+* Use ***Fullscreen*** or ***One large window***.
+* On ***Extra settings*** page, check ***Disable access control***.
+
 **PowerShell**
 ```
 docker run -it `
@@ -11,15 +16,6 @@ docker run -it `
   -h alpinedocker `
   --name alpine-xfce4 `
   rookiepeng/alpine-xfce4
-```
-
-* Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
-* Start [VcXsrv](https://sourceforge.net/projects/vcxsrv/) by using ***XLaunch*** shortcut
-* Use ***Fullscreen*** or ***One large window***.
-* On ***Extra settings*** page, check ***Disable access control***.
-* On the shell of the docker image, run
-```
-startxfce4 &
 ```
 
 **Known Issue on Windows**
@@ -37,11 +33,6 @@ docker run -it \
   -h alpinedocker \
   --name alpine-xfce4 \
   rookiepeng/alpine-xfce4
-```
-
-* On the shell of the docker image, run
-```
-startxfce4 &
 ```
 
 # Note

@@ -4,6 +4,11 @@ It is said docker was not designed for GUI. However, docker is still a pretty go
 
 # Usage for Windows
 
+* Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
+* Start [VcXsrv](https://sourceforge.net/projects/vcxsrv/) by using ***XLaunch*** shortcut
+* Use ***Fullscreen*** or ***One large window***.
+* On ***Extra settings*** page, check ***Disable access control***.
+
 **PowerShell**
 ```
 docker run -it `
@@ -14,14 +19,6 @@ docker run -it `
 	rookiepeng/arch-lxqt
 ```
 
-* Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
-* Start [VcXsrv](https://sourceforge.net/projects/vcxsrv/) by using ***XLaunch*** shortcut
-* Use ***Fullscreen*** or ***One large window***.
-* On ***Extra settings*** page, check ***Disable access control***.
-* On the shell of the image, run
-```
-startlxqt &
-```
 
 **Known Issue on Windows**
 

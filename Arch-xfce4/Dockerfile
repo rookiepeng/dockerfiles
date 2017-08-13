@@ -17,4 +17,6 @@ RUN echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 
 USER archie
 
-ENV HOME /home/archie
+#ENV HOME /home/archie
+
+CMD startxfce4
