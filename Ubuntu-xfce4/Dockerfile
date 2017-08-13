@@ -6,7 +6,8 @@ MAINTAINER rookiepeng
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install \
-    xfce4
+    xfce4 \
+    sudo
 
 RUN rm -rf /var/lib/apt/lists/*
 
