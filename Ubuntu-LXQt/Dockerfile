@@ -5,7 +5,7 @@ FROM ubuntu
 MAINTAINER rookiepeng
 
 RUN apt-get update && \
-    apt-get --no-install-recommends install \
+    apt-get -y --no-install-recommends install \
     lxqt
 
 RUN rm /var/lib/apt/lists/*
