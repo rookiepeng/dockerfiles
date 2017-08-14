@@ -1,7 +1,7 @@
 # DESCRIPTION:	  xfce4 desktop environment on Alpine Linux
 # AUTHOR:		  rookiepeng (https://zpeng.me)
 
-FROM alpine
+FROM alpine:edge
 MAINTAINER rookiepeng
 
 RUN apk add --no-cache --update \
