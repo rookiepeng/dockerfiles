@@ -19,7 +19,6 @@ docker run -it `
 	rookiepeng/arch-lxqt
 ```
 
-
 **Known Issue on Windows**
 
 * The application menu doesn't work if a volume is mounted to *"/home"*
@@ -32,15 +31,10 @@ docker run -it `
 Change *"\<Volume\>"* to the shared directory.
 ```
 docker run -it \
-	-v <Volume>:/home/archie \
+	-v <Volume>:/root \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-e DISPLAY=unix$DISPLAY \
 	-h archdocker \
 	--name arch-lxqt \
 	rookiepeng/arch-lxqt
 ```
-
-# Note
-
-* The default password for user archie is ***archie***, please change the password on first run.
-

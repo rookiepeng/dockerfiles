@@ -6,16 +6,16 @@ MAINTAINER rookiepeng
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install \
-    lxqt \
-    sudo
+    lxqt
+    #sudo
 
 RUN rm -rf /var/lib/apt/lists/*
 
-RUN useradd -m -d /home/ubuntu -s /bin/bash ubuntu
-RUN echo "ubuntu:ubuntu" | chpasswd
-RUN usermod -aG sudo ubuntu
+#RUN useradd -m -d /home/ubuntu -s /bin/bash ubuntu
+#RUN echo "ubuntu:ubuntu" | chpasswd
+#RUN usermod -aG sudo ubuntu
 
-USER ubuntu
+#USER ubuntu
 
 #ENV HOME /home/alpine
 

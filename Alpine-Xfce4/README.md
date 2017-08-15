@@ -12,7 +12,7 @@ It is said docker was not designed for GUI. However, docker is still a pretty go
 docker run -it `
   --net bridge `
   -e DISPLAY=10.0.75.1:0 `
-  -v /c/Docker/xfce4:/home/alpine `
+  -v /c/Docker/xfce4:/root `
   -h alpinedocker `
   --name alpine-xfce4 `
   rookiepeng/alpine-xfce4
@@ -27,15 +27,10 @@ docker run -it `
 Change *"\<Volume\>"* to the shared directory.
 ```
 docker run -it \
-  -v <Volume>:/home/alpine \
+  -v <Volume>:/root \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
   -h alpinedocker \
   --name alpine-xfce4 \
   rookiepeng/alpine-xfce4
 ```
-
-# Note
-
-* The default password for user alpine is ***alpine***, please change the password on first run.
-

@@ -10,7 +10,7 @@
 docker run -it `
   --net bridge `
   -e DISPLAY=10.0.75.1:0 `
-  -v /c/Docker/ubuntu:/home/ubuntu `
+  -v /c/Docker/ubuntu:/root `
   -h ubuntudocker `
   --name ubuntu-lxqt `
   rookiepeng/ubuntu-lxqt
@@ -21,15 +21,10 @@ docker run -it `
 Change *"\<Volume\>"* to the shared directory.
 ```
 docker run -it \
-  -v <Volume>:/home/ubuntu \
+  -v <Volume>:/root \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
   -h ubuntudocker \
   --name ubuntu-lxqt \
   rookiepeng/ubuntu-lxqt
 ```
-
-# Note
-
-* The default password for user ubuntu is ***ubuntu***, please change the password on first run.
-
