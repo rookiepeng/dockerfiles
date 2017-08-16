@@ -1,6 +1,10 @@
-It is said docker was not designed for GUI. However, docker is still a pretty good option for Windows users to have a Linux GUI environment without the VMs.
+# Xfce4 desktop on Alpine Linux
 
-# Usage for Windows
+**Known Issue on Windows**
+
+* Xfce confgurations don't work.
+
+## Usage on Windows
 
 * Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
 * Start [VcXsrv](https://sourceforge.net/projects/vcxsrv/) by using ***XLaunch*** shortcut
@@ -12,25 +16,25 @@ It is said docker was not designed for GUI. However, docker is still a pretty go
 docker run -it `
   --net bridge `
   -e DISPLAY=10.0.75.1:0 `
-  -v /c/Docker/xfce4:/root `
+  -v /c/Docker/xfce4:/home/alpine `
   -h alpinedocker `
   --name alpine-xfce4 `
   rookiepeng/alpine-xfce4
 ```
 
-**Known Issue on Windows**
-
-* Xfce confgurations don't work.
-
-# Usage for Linux (Untested)
+## Usage on Linux (Untested)
 
 Change *"\<Volume\>"* to the shared directory.
 ```
 docker run -it \
-  -v <Volume>:/root \
+  -v <Volume>:/home/alpine \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
   -h alpinedocker \
   --name alpine-xfce4 \
   rookiepeng/alpine-xfce4
 ```
+
+# Note
+
+* The default password for user alpine is ***alpine***, please change the password on first run.

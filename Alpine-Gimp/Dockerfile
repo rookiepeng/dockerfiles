@@ -1,4 +1,4 @@
-# DESCRIPTION:	  Gimp on Alpine Linux
+# DESCRIPTION:	  GIMP on Alpine Linux
 # AUTHOR:		  rookiepeng (https://zpeng.me)
 
 FROM alpine

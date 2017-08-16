@@ -1,8 +1,13 @@
-It is said docker was not designed for GUI. However, docker is still a pretty good option for Windows users to have a Linux GUI environment without the VMs.
+# LXQt desktop on Arch Linux
 
-![lxqt](https://raw.githubusercontent.com/rookiepeng/Docker-Files/master/Arch-LXQt/images/lxqt.png)
+**Known Issue on Windows**
 
-# Usage for Windows
+* The application menu doesn't work if a volume is mounted to *"/home"*
+```
+-v /c/Docker/lxqt:/home/archie
+```
+
+## Usage on Windows
 
 * Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
 * Start [VcXsrv](https://sourceforge.net/projects/vcxsrv/) by using ***XLaunch*** shortcut
@@ -19,22 +24,19 @@ docker run -it `
 	rookiepeng/arch-lxqt
 ```
 
-**Known Issue on Windows**
-
-* The application menu doesn't work if a volume is mounted to *"/home"*
-```
--v /c/Docker/lxqt:/home/archie
-```
-
-# Usage for Linux (Untested)
+## Usage on Linux
 
 Change *"\<Volume\>"* to the shared directory.
 ```
 docker run -it \
-	-v <Volume>:/root \
+	-v <Volume>:/home/archie \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-e DISPLAY=unix$DISPLAY \
 	-h archdocker \
 	--name arch-lxqt \
 	rookiepeng/arch-lxqt
 ```
+
+# Note
+
+* The default password for user archie is ***archie***, please change the password on first run.

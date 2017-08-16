@@ -1,4 +1,4 @@
-# DESCRIPTION:	  Xfce4 on Ubuntu Linux
+# DESCRIPTION:	  Xfce4 desktop on Ubuntu
 # AUTHOR:		  rookiepeng (https://zpeng.me)
 
 FROM ubuntu
@@ -9,16 +9,16 @@ RUN apt-get update && \
     xfce4 \
     xfce4-terminal \
     gvfs \
-    breeze-cursor-theme
-    #sudo
+    breeze-cursor-theme \
+    sudo
 
 RUN rm -rf /var/lib/apt/lists/*
 
-#RUN useradd -m -d /home/ubuntu -s /bin/bash ubuntu
-#RUN echo "ubuntu:ubuntu" | chpasswd
-#RUN usermod -aG sudo ubuntu
+RUN useradd -m -d /home/ubuntu -s /bin/bash ubuntu
+RUN echo "ubuntu:ubuntu" | chpasswd
+RUN usermod -aG sudo ubuntu
 
-#USER ubuntu
+USER ubuntu
 
 #ENV HOME /home/alpine
 

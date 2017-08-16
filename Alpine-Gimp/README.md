@@ -1,4 +1,6 @@
-# Usage for Windows
+# GIMP on Alpine Linux
+
+## Usage on Windows
 
 * Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
 * Start [VcXsrv](https://sourceforge.net/projects/vcxsrv/) by using ***XLaunch*** shortcut
@@ -16,7 +18,7 @@ docker run -it `
   rookiepeng/alpine-gimp
 ```
 
-# Usage for Linux (Untested)
+## Usage on Linux
 
 Change *"\<Volume\>"* to the shared directory.
 ```
@@ -32,4 +34,3 @@ docker run -it \
 # Note
 
 * The default password for user alpine is ***alpine***, please change the password on first run.
-
