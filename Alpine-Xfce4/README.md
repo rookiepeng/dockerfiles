@@ -22,7 +22,7 @@ docker run -it `
   rookiepeng/alpine-xfce4
 ```
 
-## Usage on Linux (Untested)
+## Usage on Linux
 
 Change *"\<Volume\>"* to the shared directory.
 ```
@@ -35,6 +35,6 @@ docker run -it \
   rookiepeng/alpine-xfce4
 ```
 
-# Note
+### Note
 
 * The default password for user alpine is ***alpine***, please change the password on first run.

@@ -31,6 +31,6 @@ docker run -it \
   rookiepeng/alpine-gimp
 ```
 
-# Note
+### Note
 
 * The default password for user alpine is ***alpine***, please change the password on first run.

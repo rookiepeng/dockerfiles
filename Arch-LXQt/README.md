@@ -37,6 +37,6 @@ docker run -it \
 	rookiepeng/arch-lxqt
 ```
 
-# Note
+### Note
 
 * The default password for user archie is ***archie***, please change the password on first run.

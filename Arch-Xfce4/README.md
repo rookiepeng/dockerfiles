@@ -18,7 +18,7 @@ docker run -it `
   rookiepeng/arch-xfce4
 ```
 
-## Usage on Linux (Untested)
+## Usage on Linux
 
 Change *"\<Volume\>"* to the shared directory.
 ```
@@ -31,6 +31,6 @@ docker run -it \
   rookiepeng/arch-xfce4
 ```
 
-# Note
+### Note
 
 * The default password for user archie is ***archie***, please change the password on first run.
