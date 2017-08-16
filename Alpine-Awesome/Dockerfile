@@ -17,4 +17,4 @@ RUN apk add --no-cache --update \
 
 #ENV HOME /home/alpine
 
-#ENTRYPOINT [ "awesome" ]
+ENTRYPOINT [ "sh" ]
