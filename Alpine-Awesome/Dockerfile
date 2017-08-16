@@ -6,7 +6,8 @@ MAINTAINER rookiepeng
 
 RUN apk add --no-cache --update \
     #sudo \
-    awesome
+    awesome \
+    dbus-x11
 
 #RUN adduser -D -h /home/alpine -s /bin/sh alpine
 #RUN echo "alpine:alpine" | chpasswd
