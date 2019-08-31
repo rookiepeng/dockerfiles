@@ -111,12 +111,7 @@ RUN conda install --quiet --yes \
 
 RUN conda install --quiet --yes \
     'numpy=1.16*' \
-    'cython=0.29*' \
-    'h5py=2.9*' \
-    'hdf5=1.10*' \
-    'ipywidgets=7.5*' \
     'matplotlib=3.1.*' \
-    'numba=0.45*' \
     'pandas=0.25*' \
     'scipy=1.3*' \
     'seaborn=0.9*' \
@@ -132,22 +127,12 @@ RUN conda install --quiet --yes \
     # Check this URL for most recent compatibilities
     # https://github.com/jupyter-widgets/ipywidgets/tree/master/packages/jupyterlab-manager
     jupyter labextension install @jupyter-widgets/jupyterlab-manager@^1.0.1 --no-build && \
-    jupyter labextension install jupyterlab_bokeh@1.0.0 --no-build && \
+    # jupyter labextension install jupyterlab_bokeh@1.0.0 --no-build && \
     jupyter lab build --dev-build=False && \
     npm cache clean --force && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
     rm -rf /home/$NB_USER/.cache/yarn && \
     rm -rf /home/$NB_USER/.node-gyp && \
-    fix-permissions $CONDA_DIR && \
-    fix-permissions /home/$NB_USER
-
-# Install facets which does not have a pip or conda package at the moment
-RUN cd /tmp && \
-    git clone https://github.com/PAIR-code/facets.git && \
-    cd facets && \
-    jupyter nbextension install facets-dist/ --sys-prefix && \
-    cd && \
-    rm -rf /tmp/facets && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
 
