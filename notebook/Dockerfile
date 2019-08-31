@@ -122,6 +122,10 @@ COPY start-notebook.sh /usr/local/bin/
 COPY start-singleuser.sh /usr/local/bin/
 COPY jupyter_notebook_config.py /etc/jupyter/
 
+RUN chmod +x /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start-notebook.sh
+RUN chmod +x /usr/local/bin/start-singleuser.sh
+
 # Fix permissions on /etc/jupyter as root
 USER root
 RUN fix-permissions /etc/jupyter/
