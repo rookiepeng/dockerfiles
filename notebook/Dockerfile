@@ -2,7 +2,7 @@ ARG BASE_CONTAINER=ubuntu
 FROM $BASE_CONTAINER
 
 LABEL maintainer="rookiepeng <zpeng.me@gmail.com>"
-ARG NB_USER="jpy"
+ARG NB_USER="notebook"
 ARG NB_UID="1000"
 ARG NB_GID="100"
 
@@ -44,7 +44,7 @@ RUN chmod +x /usr/local/bin/fix-permissions
 # Enable prompt color in the skeleton .bashrc before creating the default NB_USER
 RUN sed -i 's/^#force_color_prompt=yes/force_color_prompt=yes/' /etc/skel/.bashrc
 
-# Create NB_USER wtih name jpy user with UID=1000 and in the 'users' group
+# Create NB_USER wtih name notebook user with UID=1000 and in the 'users' group
 # and make sure these dirs are writable by the `users` group.
 RUN echo "auth requisite pam_deny.so" >> /etc/pam.d/su && \
     sed -i.bak -e 's/^%admin/#%admin/' /etc/sudoers && \
@@ -107,6 +107,53 @@ RUN conda install --quiet --yes \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
     rm -rf /home/$NB_USER/.cache/yarn && \
     fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER
+
+RUN conda install --quiet --yes \
+    'numpy=1.16*' \
+    'cython=0.29*' \
+    'h5py=2.9*' \
+    'hdf5=1.10*' \
+    'ipywidgets=7.5*' \
+    'matplotlib=3.1.*' \
+    'numba=0.45*' \
+    'pandas=0.25*' \
+    'scipy=1.3*' \
+    'seaborn=0.9*' \
+    'xlrd' \
+    'plotly' \
+    'autopep8' \
+    'pandoc' \
+    && \
+    conda clean --all -f -y && \
+    # Activate ipywidgets extension in the environment that runs the notebook server
+    jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
+    # Also activate ipywidgets extension for JupyterLab
+    # Check this URL for most recent compatibilities
+    # https://github.com/jupyter-widgets/ipywidgets/tree/master/packages/jupyterlab-manager
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager@^1.0.1 --no-build && \
+    jupyter labextension install jupyterlab_bokeh@1.0.0 --no-build && \
+    jupyter lab build --dev-build=False && \
+    npm cache clean --force && \
+    rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
+    rm -rf /home/$NB_USER/.cache/yarn && \
+    rm -rf /home/$NB_USER/.node-gyp && \
+    fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER
+
+# Install facets which does not have a pip or conda package at the moment
+RUN cd /tmp && \
+    git clone https://github.com/PAIR-code/facets.git && \
+    cd facets && \
+    jupyter nbextension install facets-dist/ --sys-prefix && \
+    cd && \
+    rm -rf /tmp/facets && \
+    fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER
+
+# Import matplotlib the first time to build the font cache.
+ENV XDG_CACHE_HOME /home/$NB_USER/.cache/
+RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
     fix-permissions /home/$NB_USER
 
 EXPOSE 8888
