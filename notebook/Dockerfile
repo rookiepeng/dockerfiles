@@ -119,6 +119,7 @@ RUN conda install --quiet --yes \
     'plotly' \
     'autopep8' \
     'pandoc' \
+    'ipywidgets' \
     && \
     conda clean --all -f -y && \
     # Activate ipywidgets extension in the environment that runs the notebook server
