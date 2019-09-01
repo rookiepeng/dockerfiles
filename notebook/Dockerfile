@@ -162,5 +162,5 @@ RUN chmod +x /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start-notebook.sh
 RUN chmod +x /usr/local/bin/start-singleuser.sh
 
-# Switch back to jovyan to avoid accidental container runs as root
+# Switch back to notebook to avoid accidental container runs as root
 USER $NB_UID
