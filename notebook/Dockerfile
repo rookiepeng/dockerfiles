@@ -125,6 +125,9 @@ RUN conda install --quiet --yes \
     conda clean --all -f -y && \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
+    jupyter nbextension enable code_prettify/autopep8 && \
+    jupyter nbextension enable collapsible_headings/main && \
+    jupyter nbextension enable hide_header/main && \
     # Also activate ipywidgets extension for JupyterLab
     # Check this URL for most recent compatibilities
     # https://github.com/jupyter-widgets/ipywidgets/tree/master/packages/jupyterlab-manager
