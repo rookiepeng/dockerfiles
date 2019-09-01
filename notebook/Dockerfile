@@ -120,6 +120,7 @@ RUN conda install --quiet --yes \
     'autopep8' \
     'pandoc' \
     'ipywidgets' \
+    'conda-forge::jupyter_contrib_nbextensions' \
     && \
     conda clean --all -f -y && \
     # Activate ipywidgets extension in the environment that runs the notebook server
