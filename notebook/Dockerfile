@@ -5,11 +5,11 @@ LABEL maintainer="rookiepeng <zpeng.me@gmail.com>"
 
 USER $NB_UID
 RUN conda install --quiet --yes \
-    'numpy=1.16*' \
-    'matplotlib=3.1.*' \
-    'pandas=0.25*' \
-    'scipy=1.3*' \
-    'seaborn=0.9*' \
+    'numpy' \
+    'matplotlib' \
+    'pandas' \
+    'scipy' \
+    'seaborn' \
     'xlrd' \
     'plotly' \
     'autopep8' \
