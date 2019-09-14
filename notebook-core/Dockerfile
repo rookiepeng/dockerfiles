@@ -69,7 +69,7 @@ RUN cd /tmp && \
     /bin/bash Miniconda3-latest-Linux-x86_64.sh -f -b -p $CONDA_DIR && \
     rm Miniconda3-latest-Linux-x86_64.sh && \
     # echo "conda ${CONDA_VERSION}" >> $CONDA_DIR/conda-meta/pinned && \
-    $CONDA_DIR/bin/conda config --system --prepend channels conda-forge && \
+    # $CONDA_DIR/bin/conda config --system --prepend channels conda-forge && \
     $CONDA_DIR/bin/conda config --system --set auto_update_conda false && \
     $CONDA_DIR/bin/conda config --system --set show_channel_urls true && \
     $CONDA_DIR/bin/conda install --quiet --yes conda
