@@ -59,16 +59,11 @@ RUN echo "auth requisite pam_deny.so" >> /etc/pam.d/su && \
 USER $NB_UID
 WORKDIR $HOME
 
-# Install conda as jpy and check the md5 sum provided on the download site
-ENV MINICONDA_VERSION=4.6.14 \
-    CONDA_VERSION=4.7.11
-
 RUN cd /tmp && \
     wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
     # echo "718259965f234088d785cad1fbd7de03 *Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh" | md5sum -c - && \
     /bin/bash Miniconda3-latest-Linux-x86_64.sh -f -b -p $CONDA_DIR && \
     rm Miniconda3-latest-Linux-x86_64.sh && \
-    # echo "conda ${CONDA_VERSION}" >> $CONDA_DIR/conda-meta/pinned && \
     $CONDA_DIR/bin/conda config --system --prepend channels conda-forge && \
     $CONDA_DIR/bin/conda config --system --set auto_update_conda false && \
     $CONDA_DIR/bin/conda config --system --set show_channel_urls true && \
