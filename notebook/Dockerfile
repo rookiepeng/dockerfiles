@@ -15,6 +15,7 @@ RUN conda install --quiet --yes \
     'autopep8' \
     'pandoc' \
     'ipywidgets' \
+    'h5py' \
     'conda-forge::jupyter_contrib_nbextensions' \
     && \
     conda clean --all -f -y && \
