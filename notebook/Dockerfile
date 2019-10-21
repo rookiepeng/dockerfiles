@@ -16,7 +16,6 @@ RUN conda install --quiet --yes \
     'pandoc' \
     'ipywidgets' \
     'h5py' \
-    'numba' \
     'conda-forge::jupyter_contrib_nbextensions' \
     && \
     conda clean --all -f -y && \
