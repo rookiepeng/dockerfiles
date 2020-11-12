@@ -1,4 +1,4 @@
-ARG BASE_CONTAINER=rookiepeng/notebook-core
+ARG BASE_CONTAINER=jupyter/base-notebook
 FROM $BASE_CONTAINER
 
 LABEL maintainer="rookiepeng <zpeng.me@gmail.com>"
