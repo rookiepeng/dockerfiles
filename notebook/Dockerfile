@@ -67,9 +67,12 @@ RUN conda install --quiet --yes -c plotly plotly-orca
 # Import matplotlib the first time to build the font cache.
 ENV XDG_CACHE_HOME /home/$NB_USER/.cache/
 ENV JUPYTER_ENABLE_LAB 1
+
+USER root
 RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
     fix-permissions /home/$NB_USER
 
+USER $NB_UID
 COPY config_orca.py /home/$NB_USER/config_orca.py
 RUN python /home/$NB_USER/config_orca.py
 
