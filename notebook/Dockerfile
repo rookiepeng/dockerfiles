@@ -5,6 +5,7 @@ LABEL maintainer="rookiepeng <zpeng.me@gmail.com>"
 
 USER root
 
+RUN apt-get update
 RUN apt-get install -yq --no-install-recommends \
     libglib2.0-0 \
     libnss3 \
@@ -14,6 +15,7 @@ RUN apt-get install -yq --no-install-recommends \
     libxss1 \
     libasound2 \
     xvfb
+RUN rm -rf /var/lib/apt/lists/*
 
 USER $NB_UID
 
