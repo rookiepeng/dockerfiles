@@ -75,6 +75,7 @@ RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
 USER $NB_UID
 COPY config_orca.py /home/$NB_USER/config_orca.py
 RUN python /home/$NB_USER/config_orca.py
+RUN rm /home/$NB_USER/config_orca.py
 
 # Switch back to notebook to avoid accidental container runs as root
 USER $NB_UID
