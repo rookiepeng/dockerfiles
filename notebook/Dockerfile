@@ -4,6 +4,9 @@ FROM $BASE_CONTAINER
 LABEL maintainer="rookiepeng <zpeng.me@gmail.com>"
 
 USER $NB_UID
+
+COPY lab /home/$NB_USER/.jupyter/lab
+
 RUN conda install --quiet --yes \
     'numpy' \
     'matplotlib' \
