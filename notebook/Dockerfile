@@ -3,6 +3,13 @@ FROM $BASE_CONTAINER
 
 LABEL maintainer="rookiepeng <zpeng.me@gmail.com>"
 
+USER root
+
+RUN apt-get install -yq --no-install-recommends \
+    libglib2.0-0 \
+    libgtk2.0-0 \
+    libgconf-2-4
+
 USER $NB_UID
 
 COPY lab /home/$NB_USER/.jupyter/lab
@@ -47,11 +54,6 @@ RUN conda install --quiet --yes \
     fix-permissions /home/$NB_USER
 
 RUN conda install --quiet --yes -c plotly plotly-orca
-
-RUN apt-get install -yq --no-install-recommends \
-    libglib2.0-0 \
-    libgtk2.0-0 \
-    libgconf-2-4
 
 # Import matplotlib the first time to build the font cache.
 ENV XDG_CACHE_HOME /home/$NB_USER/.cache/
