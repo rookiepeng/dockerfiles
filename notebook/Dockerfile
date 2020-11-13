@@ -7,8 +7,13 @@ USER root
 
 RUN apt-get install -yq --no-install-recommends \
     libglib2.0-0 \
-    libgtk2.0-0 \
-    libgconf-2-4
+    libnss3 \
+    libgdk-pixbuf2.0-0 \
+    libgtk-3-0 \
+    libx11-xcb-dev \
+    libxss1 \
+    libasound2 \
+    xvfb
 
 USER $NB_UID
 
@@ -60,6 +65,9 @@ ENV XDG_CACHE_HOME /home/$NB_USER/.cache/
 ENV JUPYTER_ENABLE_LAB 1
 RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
     fix-permissions /home/$NB_USER
+
+COPY config_orca.py /home/$NB_USER/config_orca.py
+RUN python /home/$NB_USER/config_orca.py
 
 # Switch back to notebook to avoid accidental container runs as root
 USER $NB_UID
