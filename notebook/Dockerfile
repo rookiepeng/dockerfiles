@@ -14,7 +14,9 @@ RUN apt-get install -yq --no-install-recommends \
     libx11-xcb-dev \
     libxss1 \
     libasound2 \
+    libxtst6 \
     xvfb
+
 RUN rm -rf /var/lib/apt/lists/*
 
 USER $NB_UID
