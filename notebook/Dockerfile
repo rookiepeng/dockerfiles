@@ -43,6 +43,7 @@ RUN conda install --quiet --yes \
 
 # Import matplotlib the first time to build the font cache.
 ENV XDG_CACHE_HOME /home/$NB_USER/.cache/
+ENV JUPYTER_ENABLE_LAB 1
 RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
     fix-permissions /home/$NB_USER
 
